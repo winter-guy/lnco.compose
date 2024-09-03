@@ -1,0 +1,10 @@
+{
+  "domain": "lnco.eu.auth0.com",
+  "clientId": "93vufsCG9WMk7MlEHZZGdQ2Cfq2lcbK9",
+  "authorizationParams": {
+    "audience": "https://auth.lnco.in/"
+  },
+  "apiUri": "http://localhost:3000/",
+  "appUri": "https://lnco-artifacts.vercel.app",
+  "errorPath": "/error"
+}

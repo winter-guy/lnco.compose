@@ -1,0 +1,35 @@
+<div class="flex justify-between items-center pt-20">
+  <div class="flex">
+    <button routerLink="/" type="button" title="close"
+      class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
+  <div class="flex space-x-2 h-8">
+    <div class="relative z-0 flex -space-x-px">
+      <button (click)="saveEditorData()" class="btn">
+        <span>publish</span>
+      </button>
+    </div>
+    <button (click)="openDrawer()"
+      class="btn !bg-zinc-100">
+      <span>M</span>
+  </button>
+  </div>
+</div>
+<div class="my-16">
+  <div class="max-w-2xl mx-auto">
+    <div>
+      <div class="flex items-center justify-between w-full mb-10" [formGroup]="editorForm">
+        <div formControlName="headline" placeholder="Story head" title="set header"
+          class="w-full text-2xl font-semibold focus-visible:ring-0 focus-visible:outline-none editor-title editable"
+          id="editor" role="textbox" contenteditable striptags data-placeholder="title..." data-chars-remaining="0">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="editorjs"></div>
+</div>

@@ -1,0 +1,47 @@
+.btn {
+    /* Base styles */
+    @apply focus:z-10 shrink-0 saturate-[110%] bg-[#f0f3e8] dark:bg-black dark:text-zinc-50 text-[#386a20] p-1.5 rounded-full cursor-pointer disabled:opacity-50 focus:outline-none hover:bg-slate-50 inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors disabled:pointer-events-none;
+    @apply border border-[#ebefe2] dark:border-transparent;
+    /* Additional dark mode styles */
+    @apply dark:bg-zinc-800;
+}
+
+.btn > * {
+    @apply px-2.5;
+}
+
+.btn > svg {
+    @apply px-0
+}
+
+.btn:hover {
+    @apply bg-[#f1f3e8] text-[#386a20] dark:bg-zinc-700 dark:text-white;
+}
+
+.btn:disabled {
+    @apply opacity-80 cursor-not-allowed;
+}
+
+.btn:not(:disabled):hover {
+    @apply bg-opacity-80;
+}
+
+.btn:not(:disabled):focus {
+    @apply ring-2 ring-[#386a20] ring-offset-2 dark:ring-zinc-700;
+}
+
+.btn-fit {
+    @apply min-w-fit;
+}
+
+.btn-secondary {
+    @apply bg-zinc-200 text-zinc-900 dark:bg-zinc-700 dark:text-white;
+}
+
+.btn-primary {
+    @apply bg-blue-500 text-white;
+}
+
+button {
+    /* font-size: small; */
+}

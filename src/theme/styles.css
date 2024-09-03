@@ -1,0 +1,36 @@
+/* base */
+@import './tailwindcss/base.css';
+@import './01-base/variables.css';
+@import './01-base/document.css';
+@import './01-base/font.css';
+@import './01-base/heading.css';
+
+/* components */
+@import './tailwindcss/components.css';
+@import './02-components/link.css';
+@import './02-components/button.css';
+
+/* utilities */
+@import './tailwindcss/utilities.css';
+@import './03-utilities/border.css';
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200&display=swap'); */
+
+@font-face {
+  font-family: 'cheltenham';
+  /* Choose a name for your font */
+  src: url('../assets/fonts/cheltenham-normal-200.ttf') format('truetype');
+  /* Add additional font formats here if needed */
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+
+.cdx-search-field__input:focus {
+  outline: 0 !important;
+}
+html, body { height: 100%; }
+body { margin: 0; }
