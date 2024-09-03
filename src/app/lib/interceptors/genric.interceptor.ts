@@ -3,14 +3,13 @@
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-
 import { Observable, switchMap } from 'rxjs';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
     constructor(private authService: AuthService) {}
 
-    intercept(request: HttpRequest<never>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
         return this.authService.isAuthenticated$.pipe(
             switchMap((isAuthenticated: boolean) => {
                 if (this.isExceptionEndpoint(request.url) && !isAuthenticated) {
@@ -24,8 +23,6 @@ export class JwtInterceptor implements HttpInterceptor {
                             const clonedRequest = request.clone({
                                 setHeaders: {
                                     'Content-Type': 'application/json; charset=utf-8',
-                                    'Access-Control-Allow-Origin': 'true',
-                                    'Access-Control-Allow-Credentials': 'true',
                                     'Cache-Control': 'no-cache, no-store, must-revalidate, post-check=0, pre-check=0',
                                     'SPA-name': 'artifacts',
                                     Authorization: `Bearer ${token}`,
