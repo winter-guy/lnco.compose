@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { TruncatePipe } from './truncate.pipe';
+import { TruncatePipe } from '../pipe/truncate.pipe';
 import { ContenteditableValueAccessor } from '@lib/content/contenteditable.directive';
 import { StripHtmlTagsDirective } from '@lib/content/striptags.directive';
 @NgModule({
